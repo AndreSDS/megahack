@@ -6,39 +6,72 @@ body{
 }
 .container{
     background-color: #ccc;
-    width: 100%;
+    min-width: 320px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 div.content{
     display: grid;
-    grid-template-columns: 20vw auto;
+    grid-template-columns: 30vw auto;
     grid-gap: 1.5em;
     align-self: center;
-    background-color: green;
 }
-aside.categorias{
+aside.sidenav{
     padding-top: 1.5em;
-    width: 20vw;
+    width: 30vw;
     height: 100%;
+    border-right: 1px solid rgba(0,0,0,.2);
     position: fixed;
-    background: purple;
     list-style: none;
+}
+.perfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.avatar{
+    min-width: 100px;
+    max-width: 100px;
+    padding: 0.5em;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+    background: #fff;
+    border-radius: 50%;
+}
+.divider{
+    height: 1.2px;
+    background-color: #000;
+    opacity: .2;
+    margin: 40px auto 40px;
+    width: 90%;
+}
+.categorias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.categorias p{
+    width: 80%;
+    line-height: 20px;
+    margin: 0;
+    padding: 12px 0 5px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
 }
 main{
     grid-column-start: 2;
 }
 main .item{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    min-height: 100px;
     height: auto;
     padding: 1em;
     border-radius: 4px;
     margin-bottom: 1.5em;
-    background: yellow;
+    margin-right: 1.5em;
+    box-shadow: inset -2px -2px 2px 0px rgba(0,0,0,0.25);
+    background: #fff;
 }
 main .item:first-child{
     margin-top: 1.5em;
@@ -48,12 +81,15 @@ main .item:first-child{
     width: 100px;
 }
 .item .description{
+    min-height: 100px;
     padding-left: 10px;
     text-align: justify;
 }
 footer{
-    grid-column-start: 1;
-    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 30vw;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,4 +97,5 @@ footer{
 }
 footer .inner{
     width: 90%;
+    border-top: 1px solid rgba(0,0,0,0.3);
 }
