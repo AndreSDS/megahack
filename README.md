@@ -1,2 +1,2 @@
 # megahack
-Projeto se solução do desafio Globo - MegaHAck
+Projeto para solução do desafio Globo - MegaHAck.
