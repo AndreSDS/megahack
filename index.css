@@ -1,10 +1,14 @@
-@import "/node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css";
-@import "/node_modules/@fortawesome/fontawesome-free/css/solid.min.css";
+@import "./node_modules/@fortawesome/fontawesome-free/css/fontawesome.css";
+@import "./node_modules/@fortawesome/fontawesome-free/css/solid.css";
+
 body{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     background-color: #bbb;
+}
+.container .header-container{
+    display: none;
 }
 .container{
     background-color: #ccc;
@@ -104,32 +108,44 @@ footer .inner{
     border-top: 1px solid rgba(0,0,0,0.3);
 }
 
-/*classe para mostrar a sidebar*/
-.show-side{
-    width: 100%;
-    visibility: visible;
-}
-
 /* telas de até 320px*/
 @media screen and (max-width: 320px){
+
     .container{
         display: grid;
         grid-template-columns: 1fr;
+        min-width: 100%;
     }
-    .container header{
+    .container .header-container{
         position: fixed;
-        height: 40px;
+        box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.5);
+        height: 75px;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
         background: rebeccapurple;
     }
+    .container header .header-inner{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
     .container header .logo{
         width: 40px;
     }
-    .container header .toggle-icon{
-        color: #fff;
+    .container header .toggle-icon,
+    .content aside.sidenav header .sidenav-toggle{
+        color: rebeccapurple;
+        background: #fff;
+        width: 30px;
+        height: 30px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .container .content{
         display: flex;
@@ -137,14 +153,28 @@ footer .inner{
         justify-content: center;
         width: 90vw;
         margin: 0 auto;
+        margin-top: 60px;
     }
-    .container .content .sidenav{
+    aside{
         top: 0;
-        left: 0;
-        width: 0;
-        visibility: collapse;
+        left: -100%;
         background: rebeccapurple;
-        transition: all linear 300ms ease-in-out;
+        transition: all ease-in 300ms;
+    }
+    .content aside.sidenav header {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .content aside.sidenav header .sidenav-toggle{
+        margin-right: 1.5em;
+        align-self: flex-end;
+    }
+    /*classe para mostrar a sidebar*/
+    .show-side{
+        min-width: 100%;
+        left: 0;
+        transition: all ease-in-out 300ms;
     }
     .container .content main{
         display: flex;
@@ -170,8 +200,23 @@ footer .inner{
         font-size: 0.8em;
         line-height: 0.8em;
     }
+    footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
 }
 /* telas de até 321px a 480px*/
+media screen and (max-width: 320px){
+
+}
 /* telas de até 481px a 768px*/
+media screen and (max-width: 320px){}
 /* telas de até 769px a 960px*/
+media screen and (max-width: 320px){}
 /* telas de até 960px*/
+media screen and (max-width: 320px){}
