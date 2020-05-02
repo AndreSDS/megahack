@@ -4,7 +4,8 @@
   "description": "Projeto para solução do desafio Globo - MegaHAck.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/AndreSDS/megahack/issues"
   },
-  "homepage": "https://github.com/AndreSDS/megahack#readme"
+  "homepage": "https://github.com/AndreSDS/megahack#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
 }
