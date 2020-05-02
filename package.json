@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/AndreSDS/megahack/issues"
   },
-  "homepage": "https://github.com/AndreSDS/megahack#readme"
+  "homepage": "https://github.com/AndreSDS/megahack#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0"
+  }
 }
