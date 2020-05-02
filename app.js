@@ -18,6 +18,8 @@ app.get('/categoria', function (req, res) {
     res.sendFile(__dirname + '/public/categoria.html')
 });
 
+app.use(express.static(__dirname + '/public/viewIndex/'));
+
 app.listen(porta, function () {
     console.log(`Servidor ligado na porta ${porta}`);
 })
