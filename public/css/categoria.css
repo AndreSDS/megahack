@@ -1,9 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .container{
     height: 100vh;
     height: -webkit-fill-available;
     box-sizing: border-box;
     background-color: darkgray;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: 'Lucida Sans', sans-serif;
@@ -34,4 +40,54 @@
 .container header .inner a {
     color: whitesmoke;
     text-decoration: none;
+}
+.container .content{
+    background-color: rebeccapurple;
+    width: 80%;
+    padding: 0 2em;
+    height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 6px
+}
+.container .content .header{
+    width: 100%;
+    color: whitesmoke;
+}
+.container h2, .container p{
+    padding: 0;
+    margin: 0;
+}
+.container h2{
+    padding: 10px 0;
+}
+.container .content main{
+    width: 100%;
+    height: auto;
+}
+.container .content main ul{
+    list-style: none;
+    display: flex;
+    text-decoration: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: stretch;
+}
+.container .content main ul li{
+    background: ghostwhite;
+    padding: 10px 20px;
+    margin: 0.3em;
+    border-radius: 20px;
+    color: rebeccapurple;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all ease-in 300ms;
+}
+.container .content main ul li:hover{
+    box-sizing: border-box;
+    background: rebeccapurple;
+    color: whitesmoke;
+    border: 2px solid;
 }
