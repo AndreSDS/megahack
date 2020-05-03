@@ -1,0 +1,35 @@
+.container{
+    height: 100vh;
+    height: -webkit-fill-available;
+    box-sizing: border-box;
+    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 4em;
+    font-family: 'Lucida Sans', sans-serif;
+}
+.container header{
+    width: 100%;
+    background-color: rebeccapurple;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
+    justify-content: space-between;
+    padding: 0 30px;
+    font-size: 1.7em;
+    font-weight: 600;
+}
+.container .users{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+}
+.container .users .user{
+    background: mediumpurple;
+    width: 20vw;
+    height: 20vh;
+    border-radius: 4px;
+}
