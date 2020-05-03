@@ -7,16 +7,43 @@ body{
     padding: 0;
     background-color: #bbb;
 }
-.container .header-container{
-    display: none;
-}
 .container{
     background-color: #ccc;
-    min-width: 320px;
     max-width: 960px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    justify-content: center;
+}
+.container .header-container{
+    position: fixed;
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.5);
+    height: 75px;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    background: rebeccapurple;
+    }
+.container header .header-inner{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.container header .logo{
+    width: 40px;
+}
+.container header .toggle-icon,
+.content aside.sidenav header .sidenav-toggle{
+    color: rebeccapurple;
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    display: none;
+    align-items: center;
     justify-content: center;
 }
 div.content{
@@ -31,7 +58,8 @@ aside.sidenav{
     height: 100%;
     border-right: 1px solid rgba(0,0,0,.2);
     position: fixed;
-    list-style: none;
+    color: #fff;
+    background: rebeccapurple;
 }
 .perfil{
     display: flex;
@@ -107,9 +135,20 @@ footer .inner{
     width: 90%;
     border-top: 1px solid rgba(0,0,0,0.3);
 }
+/*classe para mostrar a sidebar*/
+.show-side{
+    min-width: 100%;
+    left: 0;
+    transition: all ease-out 300ms;
+}
 
 /* telas de até 320px*/
 @media screen and (max-width: 320px){
+
+    .container header .toggle-icon,
+    .content aside.sidenav header .sidenav-toggle{
+        display: flex;
+    }
 
     .container{
         display: grid;
@@ -117,35 +156,7 @@ footer .inner{
         min-width: 100%;
     }
     .container .header-container{
-        position: fixed;
-        box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.5);
-        height: 75px;
-        width: 100%;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: rebeccapurple;
-    }
-    .container header .header-inner{
-        width: 90%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 0 auto;
-    }
-    .container header .logo{
-        width: 40px;
-    }
-    .container header .toggle-icon,
-    .content aside.sidenav header .sidenav-toggle{
-        color: rebeccapurple;
-        background: #fff;
-        width: 30px;
-        height: 30px;
-        border-radius: 4px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
     .container .content{
         display: flex;
@@ -153,7 +164,7 @@ footer .inner{
         justify-content: center;
         width: 90vw;
         margin: 0 auto;
-        margin-top: 60px;
+        margin-top: 75px;
     }
     aside{
         top: 0;
@@ -169,12 +180,6 @@ footer .inner{
     .content aside.sidenav header .sidenav-toggle{
         margin-right: 1.5em;
         align-self: flex-end;
-    }
-    /*classe para mostrar a sidebar*/
-    .show-side{
-        min-width: 100%;
-        left: 0;
-        transition: all ease-in-out 300ms;
     }
     .container .content main{
         display: flex;
@@ -211,12 +216,51 @@ footer .inner{
     }
 }
 /* telas de até 321px a 480px*/
-media screen and (max-width: 320px){
+@media screen and (max-width: 600px) and (min-width: 321px){
 
+    .container header .toggle-icon,
+    .content aside.sidenav header .sidenav-toggle{
+        display: flex;
+    }
+    
+    .container .header-container{
+        position: unset;
+        display: flex;
+    }
+    .container .header-container .header-inner .logo{
+        width: 50px;
+    }
+    .container .content{
+        grid-template-columns: 1fr;
+    } 
+    aside{
+        top: 0;
+        left: -100%;
+        transition: all ease-in 300ms;
+    }
+    .show-side {
+        min-width: 70%;
+    }
+    .content aside header {
+        display: flex;
+        flex-direction: column;
+    }
+    .content aside header .sidenav-toggle{
+        align-self: flex-end;
+        margin-right: 1.5em;
+    }
+    main .item img{
+        width: 70px;
+    }
+    main .item .description{
+        min-height: auto;
+        height: auto;
+        font-size: 0.9em;
+        line-height: 1em;
+    }
+    footer{
+        width: 100%;
+        position: absolute;
+        bottom: 25px;
+    }
 }
-/* telas de até 481px a 768px*/
-media screen and (max-width: 320px){}
-/* telas de até 769px a 960px*/
-media screen and (max-width: 320px){}
-/* telas de até 960px*/
-media screen and (max-width: 320px){}
