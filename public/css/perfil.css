@@ -28,6 +28,9 @@
     justify-content: space-between;
     color: whitesmoke;
 }
+.container header .inner img{
+    width: 60px;
+}
 .container header .inner a {
     color: whitesmoke;
     text-decoration: none;
