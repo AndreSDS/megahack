@@ -75,7 +75,7 @@ body{
     align-items: center;
     justify-content: stretch;
 }
-.container .content main ul li{
+.container .content main ul a{
     background: ghostwhite;
     padding: 10px 20px;
     margin: 0.3em;
@@ -84,10 +84,10 @@ body{
     font-weight: 600;
     cursor: pointer;
     transition: all ease-in 300ms;
+    text-decoration: none;
 }
-.container .content main ul li:hover{
-    box-sizing: border-box;
+.container .content main ul a:hover{
+    color: ghostwhite;
     background: rebeccapurple;
-    color: whitesmoke;
     border: 2px solid;
 }
