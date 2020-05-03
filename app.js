@@ -12,12 +12,12 @@ app.get('/perfil', function (req, res) {
     res.sendFile(__dirname + '/public/perfil.html')
 });
 
-app.get('/**', function (req, res) {
-    res.sendFile(__dirname + '/public/erro.html')
-});
-
 app.get('/categoria', function (req, res) {
     res.sendFile(__dirname + '/public/categoria.html')
+});
+
+app.get('/**', function (req, res) {
+    res.sendFile(__dirname + '/public/erro.html')
 });
 
 app.listen(porta, function () {

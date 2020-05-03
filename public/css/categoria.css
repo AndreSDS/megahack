@@ -32,25 +32,3 @@
     color: whitesmoke;
     text-decoration: none;
 }
-.container .users{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-.container .users a {
-    text-decoration: none;
-}
-.container .users .user{
-    background: rebeccapurple;
-    min-width: 200px;
-    width: 20vw;
-    height: 30vh;
-    border-radius: 4px;
-    margin: 1.5em;
-    color: whitesmoke;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
