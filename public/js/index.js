@@ -38,6 +38,7 @@ window.onload = function () {
                     for (const item of dados) {
                         console.log(item)
                     }
+                    dados = [];
                 })
                 .catch(err => console.log(err));
         })
