@@ -6,11 +6,9 @@ body{
 }
 .container{
     background-color: #ccc;
-    max-width: 960px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 25vw 1fr;
+    grid-gap: 1.5em;
 }
 .container .header-container{
     position: fixed;
@@ -21,6 +19,7 @@ body{
     align-items: center;
     justify-content: space-between;
     background: rebeccapurple;
+    transition: all ease-in-out 200ms;
     }
 .container header .header-inner{
     width: 90%;
@@ -33,7 +32,7 @@ body{
     width: 40px;
 }
 .container header .toggle-icon,
-.content aside.sidenav header .sidenav-toggle{
+   aside.sidenav header .sidenav-toggle{
     color: rebeccapurple;
     background: #fff;
     width: 30px;
@@ -44,12 +43,7 @@ body{
     justify-content: center;
     transition: all ease-out 300ms;
 }
-div.content{
-    display: grid;
-    grid-template-columns: 25vw auto;
-    grid-gap: 1.5em;
-    align-self: center;
-}
+
 aside.sidenav{
     padding-top: 1.5em;
     width: 25vw;
@@ -91,6 +85,23 @@ aside.sidenav{
     margin: 0;
     padding: 12px 0 5px 0;
     border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.categorias a {
+    background: ghostwhite;
+    padding: 10px 20px;
+    margin: 0.3em;
+    border-radius: 20px;
+    color: rebeccapurple;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all ease-in 300ms;
+    text-decoration: none;
+    margin-top: 2em;
+}
+.categorias a:hover{
+    color: ghostwhite;
+    background: rebeccapurple;
+    border: 2px solid;
 }
 main{
     grid-column-start: 2;
@@ -144,7 +155,7 @@ footer .inner{
 @media screen and (max-width: 320px){
 
     .container header .toggle-icon,
-    .content aside.sidenav header .sidenav-toggle{
+    .container aside.sidenav header .sidenav-toggle{
         display: flex;
     }
 
@@ -156,7 +167,7 @@ footer .inner{
     .container .header-container{
         display: flex;
     }
-    .container .content{
+    .container main{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -170,34 +181,34 @@ footer .inner{
         background: rebeccapurple;
         transition: all ease-in 300ms;
     }
-    .content aside.sidenav header {
+    .container aside.sidenav header {
         display: flex;
         justify-content: center;
         flex-direction: column;
     }
-    .content aside.sidenav header .sidenav-toggle{
+    .container aside.sidenav header .sidenav-toggle{
         margin-right: 1.5em;
         align-self: flex-end;
     }
-    .container .content main{
+    .container main{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-    .container .content main .item:first-child{
+    .container main .item:first-child{
         margin: 1em 0 1em;
     }
-    .container .content main .item{
+    .container main .item{
         margin-right: 0;
         margin-bottom: 1em;
         padding: 0.5rem 0.5rem;
         box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
     }
-    .container .content main .item img{
+    .container main .item img{
         width: 60px;
     }
-    .container .content main .description{
+    .container main .description{
         height: auto;
         min-height: auto;
         font-size: 0.8em;
@@ -217,18 +228,18 @@ footer .inner{
 @media screen and (max-width: 600px) and (min-width: 321px){
 
     .container header .toggle-icon,
-    .content aside.sidenav header .sidenav-toggle{
+       aside.sidenav header .sidenav-toggle{
         display: flex;
     }
     
     .container .header-container{
-        position: unset;
+        position: fixed;
         display: flex;
     }
     .container .header-container .header-inner .logo{
         width: 50px;
     }
-    .container .content{
+    .container {
         grid-template-columns: 1fr;
     } 
     aside{
@@ -239,13 +250,16 @@ footer .inner{
     .show-side {
         min-width: 70%;
     }
-    .content aside header {
+    aside header {
         display: flex;
         flex-direction: column;
     }
-    .content aside header .sidenav-toggle{
+       aside header .sidenav-toggle{
         align-self: flex-end;
         margin-right: 1.5em;
+    }
+    main{
+        margin-top: 75px;
     }
     main .item img{
         width: 70px;
