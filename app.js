@@ -16,6 +16,7 @@ app.get('/categoria', function (req, res) {
     res.sendFile(__dirname + '/public/categoria.html')
 });
 
+
 app.get('/home', function (req, res) {
     res.sendFile(__dirname + '/public/index.html')
 });
