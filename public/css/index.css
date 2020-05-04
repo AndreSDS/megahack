@@ -1,0 +1,278 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #bbb;
+}
+.container{
+    background-color: #ccc;
+    display: grid;
+    grid-template-columns: 25vw 1fr;
+    grid-gap: 1.5em;
+}
+.container .header-container{
+    position: fixed;
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.5);
+    height: 75px;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    background: rebeccapurple;
+    transition: all ease-in-out 200ms;
+    }
+.container header .header-inner{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.container header .logo{
+    width: 40px;
+}
+.container header .toggle-icon,
+   aside.sidenav header .sidenav-toggle{
+    color: rebeccapurple;
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all ease-out 300ms;
+}
+
+aside.sidenav{
+    padding-top: 1.5em;
+    width: 25vw;
+    height: 100%;
+    border-right: 1px solid rgba(0,0,0,.2);
+    position: fixed;
+    color: #fff;
+    background: rebeccapurple;
+}
+.perfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.avatar{
+    min-width: 100px;
+    max-width: 100px;
+    padding: 0.5em;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+    background: #fff;
+    border-radius: 50%;
+}
+.divider{
+    height: 1.2px;
+    background-color: #000;
+    opacity: .2;
+    margin: 40px auto 40px;
+    width: 90%;
+}
+.categorias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.categorias p{
+    width: 80%;
+    line-height: 20px;
+    margin: 0;
+    padding: 12px 0 5px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.categorias a {
+    background: ghostwhite;
+    padding: 10px 20px;
+    margin: 0.3em;
+    border-radius: 20px;
+    color: rebeccapurple;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all ease-in 300ms;
+    text-decoration: none;
+    margin-top: 2em;
+}
+.categorias a:hover{
+    color: ghostwhite;
+    background: rebeccapurple;
+    border: 2px solid;
+}
+main{
+    grid-column-start: 2;
+}
+main .item{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: auto;
+    padding: 1em;
+    border-radius: 4px;
+    margin-bottom: 1.5em;
+    margin-right: 1.5em;
+    box-shadow: inset -2px -2px 2px 0px rgba(0,0,0,0.25);
+    background: #fff;
+}
+main .item:first-child{
+    margin-top: 1.5em;
+}
+.item img{
+    height: auto;
+    width: 100px;
+}
+.item .description{
+    min-height: 100px;
+    padding-left: 10px;
+    text-align: justify;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 25vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+footer .inner{
+    width: 90%;
+    border-top: 1px solid rgba(0,0,0,0.3);
+}
+/*classe para mostrar a sidebar*/
+.show-side{
+    min-width: 100%;
+    left: 0;
+    transition: all ease-out 300ms;
+}
+
+/* telas de até 320px*/
+@media screen and (max-width: 320px){
+
+    .container header .toggle-icon,
+    .container aside.sidenav header .sidenav-toggle{
+        display: flex;
+    }
+
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        min-width: 100%;
+    }
+    .container .header-container{
+        display: flex;
+    }
+    .container main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90vw;
+        margin: 0 auto;
+        margin-top: 75px;
+    }
+    aside{
+        top: 0;
+        left: -100%;
+        background: rebeccapurple;
+        transition: all ease-in 300ms;
+    }
+    .container aside.sidenav header {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .container aside.sidenav header .sidenav-toggle{
+        margin-right: 1.5em;
+        align-self: flex-end;
+    }
+    .container main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .container main .item:first-child{
+        margin: 1em 0 1em;
+    }
+    .container main .item{
+        margin-right: 0;
+        margin-bottom: 1em;
+        padding: 0.5rem 0.5rem;
+        box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
+    }
+    .container main .item img{
+        width: 60px;
+    }
+    .container main .description{
+        height: auto;
+        min-height: auto;
+        font-size: 0.8em;
+        line-height: 0.8em;
+    }
+    footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+/* telas de até 321px a 480px*/
+@media screen and (max-width: 600px) and (min-width: 321px){
+
+    .container header .toggle-icon,
+       aside.sidenav header .sidenav-toggle{
+        display: flex;
+    }
+    
+    .container .header-container{
+        position: fixed;
+        display: flex;
+    }
+    .container .header-container .header-inner .logo{
+        width: 50px;
+    }
+    .container {
+        grid-template-columns: 1fr;
+    } 
+    aside{
+        top: 0;
+        left: -100%;
+        transition: all ease-in 300ms;
+    }
+    .show-side {
+        min-width: 70%;
+    }
+    aside header {
+        display: flex;
+        flex-direction: column;
+    }
+       aside header .sidenav-toggle{
+        align-self: flex-end;
+        margin-right: 1.5em;
+    }
+    main{
+        margin-top: 75px;
+    }
+    main .item img{
+        width: 70px;
+    }
+    main .item .description{
+        min-height: auto;
+        height: auto;
+        font-size: 0.9em;
+        line-height: 1em;
+    }
+    footer{
+        width: 100%;
+        position: absolute;
+        bottom: 25px;
+    }
+}
